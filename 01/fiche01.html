@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Fiche #01</title>
+	<link rel="stylesheet" type="text/css" href="../assets/fiche.css" />
+</head>
+<body>
+	<div class="header">
+		<h1>Créer un lien sur tout un bloc HTML.</h1>
+		<p>Principes abordés : <span class="tag">Accessibilité</span>, <span class="tag">Interopérabilité</span>, <span class="tag">Référencement</span></p>
+		<p>Niveau requis : base en HTML, CSS</p>
+	</div>
+
+	<h2>Acte 1</h2>
+	<p>Vous recevez de la part de votre chef de projet la maquette ci-dessous, avec la consigne suivante :</p>
+	<div class="assets">
+		<p><blockquote>Voici la maquette pour le nouvel encart d’article à intégrer sur le site. Il faudra bien faire en sorte que tout l’encart soit cliquable.</blockquote></p>
+		<img src="assets/maquette.jpg" alt="" width="369" height="392" />
+	</div>
+	<div class="solution">
+		<p>Comment faire un lien sur tout un bloc ?</p>
+	</div>
+
+	<h2>Acte 2</h2>
+	<p>À l’aide du code HTML suivant, rendez tout son contenu cliquable vers la page <code>http://www.theverge.com/2014/9/5/6108947/moto-360-review</code>. Comparez les avantages et inconvénients de chaque solution.</p>
+	<pre class="code"><code>&lt;div class=&quot;post&quot;&gt;
+	&lt;img class=&quot;post-img&quot; alt=&quot;Moto 360&quot; src=&quot;http://cdn2.vox-cdn.com/uploads/chorus_image/image/38013858/DSCF4522-2040.0.0_standard_300.0.jpg&quot; width=&quot;300&quot; height=&quot;199&quot; /&gt;
+	&lt;h1 class=&quot;post-title&quot;&gt;&lt;a class=&quot;post-link&quot; href=&quot;http://www.theverge.com/2014/9/5/6108947/moto-360-review&quot;&gt;Moto 360 review&lt;/a&gt;&lt;/h1&gt;
+	&lt;p class=&quot;post-author&quot;&gt;By David Pierce&lt;/p&gt;
+&lt;/div&gt;
+	</code></pre>
+	<div class="solution">
+		<p><strong>En JavaScript</strong>, on peut ajouter un événement au clic de chaque <code>.post</code>.</p>
+		<pre class="code"><code>document.addEventListener('DOMContentLoaded', function() {
+	var items = document.querySelectorAll('.post');
+	for(var i=0; i < items.length; i++) {
+		var item = items[i];
+		item.addEventListener('click', function() {
+			var postLinks = this.querySelectorAll('.post-link');
+			if(postLinks.length > 0)
+			{
+				url = postLinks[0].getAttribute('href');
+				window.location = url;
+			}
+		});
+	}
+});</code></pre>
+		<p><strong>Avec jQuery</strong>, on peut écrire ça plus simplement :</p>
+		<pre class="code"><code>$(document).ready(function() {
+	$('.post').click(function(e) {
+		var url = $(this).find('.post-link').eq(0).attr('href');
+		window.location = url;
+	});
+});</code></pre>
+		<p>Ces solutions sont bonnes pour l'accessibilité, l'intéropérabilité et le référencement, mais moins pour l'expérience utilisateur (car on désactive des fonctionnalités de clics secondaires par exemple).</p>
+	</div>
+	<div class="solution">
+		<p><strong>En HTML 5</strong>, on peut ajouter un lien autour de tout un <code>block</code>.</p>
+		<pre class="code"><code>&lt;a class=&quot;post-link&quot; href=&quot;http://www.theverge.com/2014/9/5/6108947/moto-360-review&quot;&gt;
+	&lt;div class=&quot;post&quot;&gt;
+		&lt;img class=&quot;post-img&quot; alt=&quot;Moto 360&quot; src=&quot;http://cdn2.vox-cdn.com/uploads/chorus_image/image/38013858/DSCF4522-2040.0.0_standard_300.0.jpg&quot; width=&quot;300&quot; height=&quot;199&quot; /&gt;
+		&lt;h1 class=&quot;post-title&quot;&gt;Moto 360 review&lt;/h1&gt;
+		&lt;p class=&quot;post-author&quot;&gt;By David Pierce&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/a&gt;</code></pre>
+		<p>Cette solution est bonne pour l'expérience utilisateur (car toute la zone sera bien cliquable). Mais elle moins bonne pour l'accessibilité et le référencement (car il y a trop de contenus textes dans le lien) ou l'intéropérabilité (car elle ne fonctionne qu'à partir d'IE9).</p>
+	</div>
+	<div class="solution">
+		<p><strong>En CSS</strong>, on peut utiliser un pseudo-élément <sup id="cite-note-ressource1"><a href="#cite-ressource1">[1]</a></sup> sur la balise <code>&lt;a&gt;</code>, positionné ensuite pour recouvrir tout le <code>.post</code>.</p>
+		<pre class="code"><code>.post-link:before {
+	content:'';
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	background-color:rgba(0,0,0,0);
+}</code></pre>
+		<p>Cette solution est bonne pour l'accessibilité, le référencement et l'expérience utilisateur. Pour l'intéropérabilité, cette solution fonctionne bien à partir d'IE9 sur l'ensemble de la zone, et à partir d'IE8 sur les contenus images et textes uniquement.</p>
+	</div>
+
+	<h2>Acte 3</h2>
+	<p class="note">Votre venez de recevoir une nouvelle précision de la part de votre chef de projet :</p>
+	<div class="assets">
+		<p><blockquote>Au fait, il faudrait que le nom de l’auteur soit lui-aussi cliquable et ramène vers la page de l’auteur (<code>http://www.theverge.com/users/piercedavid</code>).</blockquote></p>
+	</div>
+	<p>Quelles solutions se prêtent le mieux à cette modification ?</p>
+
+	<div class="solution">
+		<p><strong>En CSS</strong>, il faut donner un contexte d'empilement <sup id="cite-note-ressource2"><a href="#cite-ressource2">[2]</a></sup> au lien placé sur l'auteur.</p>
+		<pre class="code"><code>.post-author a {
+	position:relative;
+	z-index:1;
+}</code></pre>
+	</div>
+
+	<h1>Ressources</h1>
+	<ol>
+		<li id="cite-ressource1"><a href="#cite-note-ressource1">^</a> <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:before">:before</a>, sur <a href="https://developer.mozilla.org/fr/">MDN</a></li>
+		<li id="cite-ressource2"><a href="#cite-note-ressource2">^</a> <a href="http://iamvdo.me/blog/comprendre-z-index-et-les-contextes-dempilement">Comprendre z-index et les contextes d'empilement</a>, par <a href="http://iamvdo.me/">Vincent de Oliveira</a></li>
+	</ol>
+</body>
+</html>
