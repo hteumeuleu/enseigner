@@ -43,7 +43,7 @@ Enfin, il y a aussi un certain savoir-être à transmettre :
 
 ### Outil
 
-Le but est donc de mettre en place un outil conçu et partagé par « la communauté ». GitHub semble être le bon endroit pour réunir tout ça.
+Le but est donc de mettre en place un outil conçu et partagé par « la communauté ». GitHub semble être le bon endroit pour réunir tout ça et assurer la cohérence de l'ensemble par la validation des _commit_.
 
 L'outil consiste en un ensemble de fiches construites sur un même modèle pédagogique qui permettent à un enseignant de construire et conduire son cours.
 
