@@ -18,7 +18,7 @@ Les grandes lignes du projet
 Lors de la première discussion, les points suivants ont fait consensus : 
 - Cet enseignement ne peut se faire qu'en transmettant la **culture générale** du web et ses **grands principes**.
 - Il faut rapidement être **concret** et faire des **exercices pratiques** pour ne pas perdre l'intérêt des étudiants.
-- Il s'agit plus d'**apprendre à apprendre** que de donner un enseignement dogmatique qui sera vite obsolte.
+- Il s'agit plus d'**apprendre à apprendre** que de donner un enseignement dogmatique qui sera vite obsolète.
 
 #### Les grands principes
 
