@@ -4,7 +4,7 @@ Comment enseigner l'intégration HTML ?
 La mise en place du projet
 ---------
 
-« Comment enseigner l'intégration HTML ? » Cette question posée lors de [Sud Web 2014](http://sudweb.fr/2014/) a donné envie à Rémi, Delphine et Romy de profiter des élaboratoires pour animer une discussion-débat autour de cette thématique. (Voir la section « Liens » ci-dessous.)
+« Comment enseigner l'intégration HTML ? » Cette question posée lors de [Sud Web 2014](http://sudweb.fr/2014/) a donné envie à Rémi, Delphine et Romy de profiter des élaboratoires pour animer une discussion-débat autour de cette thématique (voir la section « Liens » ci-dessous).
 
 Des idées globales se sont dégagées et, parmi elles, le besoin d'un outil pédagogique et adapté sur lequel s'appuyer.
 
@@ -16,7 +16,7 @@ Les grandes lignes du projet
 ### Pédagogie
 
 Lors de la première discussion, les points suivants ont fait consensus : 
-- Cet enseignement ne peut se faire qu'en transmettant la **culture générale** du web et ses **grands principes**.
+- Cet enseignement ne peut se faire qu'en transmettant la **culture générale** du Web et ses **grands principes**.
 - Il faut rapidement être **concret** et faire des **exercices pratiques** pour ne pas perdre l'intérêt des étudiants.
 - Il s'agit plus d'**apprendre à apprendre** que de donner un enseignement dogmatique qui sera vite obsolète.
 
@@ -27,7 +27,7 @@ Les grands principes indispensables à transmettre que nous avons identifiés so
 - l'interopérabilité ; 
 - la maintenabilité ; 
 - le référencement ; 
-- les standards du web ; 
+- les standards du Web ; 
 - la sémantique ; 
 - la performance ; 
 - l'expérience Utilisateur.
