@@ -18,7 +18,7 @@ Les grandes lignes du projet
 Lors de la première discussion, les points suivants ont fait consensus : 
 - Cet enseignement ne peut se faire qu'en transmettant la **culture générale** du web et ses **grands principes**.
 - Il faut rapidement être **concret** et faire des **exercices pratiques** pour ne pas perdre l'intérêt des étudiants.
-- Il s'agit plus d'**apprendre à apprendre** que de donner un enseignement dogmatique qui sera vite obsolte.
+- Il s'agit plus d'**apprendre à apprendre** que de donner un enseignement dogmatique qui sera vite obsolète.
 
 #### Les grands principes
 
@@ -32,7 +32,7 @@ Les grands principes indispensables à transmettre que nous avons identifiés so
 - la performance ; 
 - l'expérience Utilisateur.
 
-À cela s'ajoute des compétences : 
+À cela s'ajoutent des compétences :
 - Apprendre à apprendre ; 
 - Tester, vérifier, valider.
 
@@ -61,7 +61,7 @@ Liens
 - [La photo du tableau-blanc de l'élaboratoire](http://nissone.com/sudweb2014/EnseignerHTML-ElaboratoireSudWeb.jpg)
 
 À propos d'apprendre à apprendre : 
-- [Le code à changé](http://borisschapira.com/blog/le-code-a-change/)
+- [Le code a changé](http://borisschapira.com/blog/le-code-a-change/)
 
 À propos de la pédagogie : 
 - [Mr Meyer](http://www.hteumeuleu.fr/mr-meyer/)
