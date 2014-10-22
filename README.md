@@ -65,3 +65,4 @@ Liens
 
 À propos de la pédagogie : 
 - [Mr Meyer](http://www.hteumeuleu.fr/mr-meyer/)
+- [Cours de David](https://larlet.fr/david/blog/2014/cours-iut-bases/)
