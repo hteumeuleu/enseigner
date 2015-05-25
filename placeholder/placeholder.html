@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Placeholder</title>
+	<link rel="stylesheet" type="text/css" href="../assets/fiche.css" />
+</head>
+<body>
+	<div class="header">
+		<h1>Créer un placeholder sur un champs texte.</h1>
+		<p>Principes abordés : <span class="tag">Accessibilité</span>, <span class="tag">Interopérabilité</span>, <span class="tag">(Référencement)</span></p>
+		<p>Niveau requis : base en HTML, CSS, JS/jQuery</p>
+	</div>
+
+	<h2>Acte 1</h2>
+	<p>Vous recevez de la part de votre chef de projet la maquette ci-dessous, avec la consigne suivante :</p>
+	<div class="assets">
+		<p><blockquote>Vous devez intégrer un placeholder sur un champs input.</blockquote></p>
+		<input type="text" placeholder="Prénom de la marquise">
+	</div>
+	<div class="solution">
+		<p>Comment faire un placeholder ?</p>
+	</div>
+
+	<h2>Acte 2</h2>
+	<div class="solution">
+		<p>Faire un placeholder avec l'attribut HTML5 <strong>"placeholder"</strong></p>
+		<pre class="code"><code>
+&lt;input type="text" placeholder="Prénom de la marquise"&gt;</code></pre>
+	</div>
+
+	<div class="solution">
+		<p><strong>En JavaScript</strong>, on peut ajouter un événement au clic sur l'input et agir sur l'attribut <code>value</code>.</p>
+		<pre class="code"><code>
+//Fix unsupported placeholders
+function placeHolder(id)
+{
+var demo = document.getElementById(id);
+
+    demo.className = "fix-hint";
+    demo.value = demo.placeholder;
+
+    demo.onfocus = function()
+    {
+        if (this.className == "fix-hint")
+        { 
+        this.value = ""; this.className = "fix-nohint"; 
+        }
+    };
+
+    demo.onblur = function()
+    {
+        if (this.value === "")
+        { 
+        this.className = "fix-hint"; this.value = demo.placeholder; 
+        }
+    };
+    return false;
+</code></pre>
+	</div>
+
+	<h2>Acte 3</h2>
+	<p class="note">Votre venez de recevoir une nouvelle précision de la part de votre chef de projet :</p>
+	<div class="assets">
+		<p><blockquote>Il faudrait que l'élément input puisse afficher l'intégralité du placeholder si celui-ci déborde</blockquote></p>
+	</div>
+	<div>
+		<input type="text" placeholder="Prénom de la marquise"> (Pas bon)<br>
+		<input type="text" placeholder="Prénom de la marquise" size="22"> (Bon)
+	</div>
+	<p>Quelles solutions se prêtent le mieux à cette modification ?</p>
+
+	<div class="solution">
+		<p><strong>En CSS</strong>, On peut modifier la taille par défaut de chaque input pour lui donner une taille minimale plus large.</p>
+		<pre class="code"><code>
+input {
+    min-width: 200px;
+}</code></pre>
+	</div>
+
+	<div class="solution">
+		<p class="note">En <strong>JavaScript</strong>, on peut récupérer la taille des caractères avec <code>value.length</code> et muliplier par la taille d'un caractère pour simuler la largeur parfaite.</p>
+		<pre class="code"><code>
+var input = document.querySelector('input');
+input.style.width = (input.value.length * 16) + 'px';</code></pre>
+	</div>
+
+	<h1>Ressources</h1>
+	<ol>
+		<li id="cite-ressource1"><a href="#cite-note-ressource1">^</a> <a href="https://developer.mozilla.org/fr/docs/Web/CSS/:before">:before</a>, sur <a href="https://developer.mozilla.org/fr/">MDN</a></li>
+		<li id="cite-ressource2"><a href="#cite-note-ressource2">^</a> <a href="http://iamvdo.me/blog/comprendre-z-index-et-les-contextes-dempilement">Comprendre z-index et les contextes d'empilement</a>, par <a href="http://iamvdo.me/">Vincent de Oliveira</a></li>
+	</ol>
+</body>
+</html>
